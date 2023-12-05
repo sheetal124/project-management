@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"
-import Header from "../core/compnents/header/header"
 import { useAuth0 } from "@auth0/auth0-react"
+import Header from "../core/components/header/Header";
 
 function Dashboard() {
     const { user } = useAuth0();

@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react"
 import { Navigate, Route, Routes } from "react-router-dom"
 import Client from "./client/Client"
-import Login from "./core/compnents/authentication/Login"
+import Login from "./core/components/authentication/Login"
 import Dashboard from "./home/Dashboard"
 import Project from "./project/Project"
 import Staffing from "./staffing/StaffingContainer"

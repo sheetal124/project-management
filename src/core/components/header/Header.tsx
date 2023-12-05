@@ -1,16 +1,16 @@
-import { Link, NavLink, useLocation } from 'react-router-dom'
-import Logo from '../../../assets/images/brand-logo.png'
-import Logout from '../authentication/Logout'
+import { NavLink, useLocation } from 'react-router-dom';
+import Logo from '../../../assets/images/brand-logo.png';
+import Logout from '../authentication/Logout';
 interface headerProps {
     userName: string | undefined
 }
-function header({ userName }: headerProps) {
+function Header({ userName }: headerProps) {
     const location = useLocation();
     console.log(location.pathname);
 
     const isActive = (path: string) => location.pathname === path;
     return (
-        <header className="flex items-center justify-between w-full bg-gradient-to-r from-blue-300 to-blue-500 text-white py-4 px-6">
+        <header className="flex items-center justify-between w-full bg-gradient-to-r from-blue-300 to-blue-400 text-white py-4 px-6">
             {/* Brand logo */}
             <figure className="flex-shrink-0">
                 <img src={Logo} className="h-12 w-12 rounded-full" alt="Brand Logo" />
@@ -48,4 +48,4 @@ function header({ userName }: headerProps) {
     )
 }
 
-export default header
+export default Header
