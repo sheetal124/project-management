@@ -1,10 +1,10 @@
 import { useAuth0 } from "@auth0/auth0-react"
 import { Navigate, Route, Routes } from "react-router-dom"
-import Client from "./client/Client"
 import Login from "./core/components/authentication/Login"
-import Dashboard from "./home/Dashboard"
-import Project from "./project/Project"
-import Staffing from "./staffing/StaffingContainer"
+import Dashboard from "./pages/home/components/Dashboard"
+import Client from "./pages/client/components/Client";
+import Project from "./pages/project/components/Project";
+import Staffing from "./pages/staffing/components/Staffing";
 
 function AppRoutes() {
     const { isAuthenticated, isLoading, user } = useAuth0();
