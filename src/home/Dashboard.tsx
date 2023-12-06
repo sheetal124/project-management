@@ -5,13 +5,11 @@ import Header from "../core/components/Header";
 function Dashboard() {
     const { user } = useAuth0();
     console.log(user);
-    
-    const userName = user?.name;
 
     return (
         <>
             <div>
-                <Header userName={userName} />
+                <Header userName={user?.name} userImg={user?.picture} />
             </div>
             <Outlet />
         </>
