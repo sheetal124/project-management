@@ -6,10 +6,8 @@ import Dashboard from "./home/Dashboard"
 import Project from "./project/Project"
 import Staffing from "./staffing/StaffingContainer"
 
-function MainRoutes() {
-    const { isAuthenticated, isLoading } = useAuth0();
-
-    console.log(isAuthenticated, isLoading);
+function AppRoutes() {
+    const { isAuthenticated, isLoading, user } = useAuth0();
 
 
     if (isLoading) {
@@ -22,7 +20,13 @@ function MainRoutes() {
             {isAuthenticated ? (
                 <>
                     <Route path="/home" element={<Dashboard />} >
-                        <Route path="client/*" element={<Client />} />
+                        {user?.email === "admin_office@gmail.com" ?
+                            <>
+                                <Route index element={<Navigate to="client" />} />
+                                <Route path="client/*" element={<Client />} />
+                            </> :
+                            <Route index element={<Navigate to="project" />} />}
+
                         <Route path="project/*" element={<Project />} />
                         <Route path="staffing/*" element={<Staffing />} />
                     </Route>
@@ -35,4 +39,4 @@ function MainRoutes() {
     )
 }
 
-export default MainRoutes
+export default AppRoutes
